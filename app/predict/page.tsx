@@ -10,14 +10,14 @@ export default function PredictPage() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [result, setResult] = useState<{
     customerName: string
-    formData: any
+    formData: unknown
     prediction: number
     timestamp: string
   } | null>(null)
 
   const handleResult = (data: {
     customerName: string
-    formData: any
+    formData: unknown
     prediction: number
     timestamp: string
   }) => {

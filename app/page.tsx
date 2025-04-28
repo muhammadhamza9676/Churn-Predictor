@@ -22,7 +22,7 @@ export default function Home() {
               </h1>
               <p className="max-w-[600px] text-gray-300 md:text-xl">
                 Our advanced AI model helps you identify customers at risk of leaving, so you can take action before
-                it's too late.
+                it&apos;s too late.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link href="/predict">

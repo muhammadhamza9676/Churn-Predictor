@@ -40,7 +40,7 @@ type FormValues = z.infer<typeof formSchema>
 interface PredictionFormProps {
   onResult: (data: {
     customerName: string
-    formData: any
+    formData: unknown
     prediction: number
     timestamp: string
   }) => void
@@ -49,7 +49,7 @@ interface PredictionFormProps {
 export function PredictionForm({ onResult }: PredictionFormProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [formStep, setFormStep] = useState(0)
+  // const [formStep, setFormStep] = useState(0)
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
