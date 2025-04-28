@@ -1,101 +1,179 @@
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, BarChart3, LineChart, Users } from "lucide-react"
 import Image from "next/image";
+const img = "/images/customer.png";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex min-h-screen flex-col bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20 md:py-32">
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-black via-black to-red-950"></div>
+        <div className="container relative z-10 px-4 md:px-6">
+          <div className="grid gap-12 md:grid-cols-2 md:items-center">
+            <div className="flex flex-col space-y-6">
+              <div className="inline-block rounded-full bg-red-500/10 px-3 py-1 text-sm text-red-500">
+                Predictive Analytics
+              </div>
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl/none">
+                <span className="text-red-500">Predict</span> Customer Churn{" "}
+                <span className="text-yellow-500">Before</span> It Happens
+              </h1>
+              <p className="max-w-[600px] text-gray-300 md:text-xl">
+                Our advanced AI model helps you identify customers at risk of leaving, so you can take action before
+                it's too late.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href="/predict">
+                  <Button size="lg" className="bg-red-600 hover:bg-red-700">
+                    Start Prediction
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Button variant="outline" size="lg" className="border-red-800 bg-red-950 hover:text-black">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+            <div className="relative mx-auto aspect-square w-full max-w-md rounded-full bg-gradient-to-tr from-red-500/20 via-yellow-500/10 to-transparent p-4">
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-black">
+                <Image
+                  src={img}
+                  width={500}
+                  height={500}
+                  alt="Churn Prediction"
+                  className="h-full w-full object-fill opacity-100"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Features Section */}
+      <section className="bg-zinc-900 py-20">
+        <div className="container px-4 md:px-6">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">
+              <span className="text-yellow-500">Powerful</span> Features
+            </h2>
+            <p className="mt-4 text-gray-200">Everything you need to predict and prevent customer churn</p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Feature 1 */}
+            <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-6 transition-all hover:border-red-900 hover:shadow-lg hover:shadow-red-900/10">
+              <div className="mb-4 inline-flex rounded-lg bg-red-500/10 p-3 text-red-500">
+                <BarChart3 className="h-6 w-6" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Accurate Predictions</h3>
+              <p className="text-gray-200">
+                Our model uses advanced machine learning algorithms to predict customer churn with high accuracy.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-6 transition-all hover:border-yellow-900 hover:shadow-lg hover:shadow-yellow-900/10">
+              <div className="mb-4 inline-flex rounded-lg bg-yellow-500/10 p-3 text-yellow-500">
+                <LineChart className="h-6 w-6" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Detailed Reports</h3>
+              <p className="text-gray-200">
+                Get comprehensive PDF reports with all the details you need to take action and retain customers.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-6 transition-all hover:border-red-900 hover:shadow-lg hover:shadow-red-900/10">
+              <div className="mb-4 inline-flex rounded-lg bg-red-500/10 p-3 text-red-500">
+                <Users className="h-6 w-6" />
+              </div>
+              <h3 className="mb-2 text-xl font-bold">Customer Insights</h3>
+              <p className="text-gray-200">
+                Understand the key factors that contribute to customer churn and take targeted action.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20">
+        <div className="container px-4 md:px-6">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">
+              How It <span className="text-red-500">Works</span>
+            </h2>
+            <p className="mt-4 text-gray-200">Simple process, powerful results</p>
+          </div>
+
+          <div className="relative mx-auto max-w-4xl">
+            {/* Line connecting steps */}
+            <div className="absolute left-16 top-0 hidden h-full w-0.5 bg-gradient-to-b from-red-600 via-yellow-600 to-red-600 md:block"></div>
+
+            {/* Step 1 */}
+            <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-xl font-bold">
+                1
+              </div>
+              <div className="ml-0 md:ml-12">
+                <h3 className="text-xl font-bold">Enter Customer Data</h3>
+                <p className="mt-2 text-gray-200">
+                  Input customer details including demographics, account information, and behavior patterns.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500 text-xl font-bold text-black">
+                2
+              </div>
+              <div className="ml-0 md:ml-12">
+                <h3 className="text-xl font-bold">Get Instant Prediction</h3>
+                <p className="mt-2 text-gray-200">
+                  Our AI model analyzes the data and provides an immediate prediction on churn probability.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex flex-col gap-4 md:flex-row md:items-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-xl font-bold">
+                3
+              </div>
+              <div className="ml-0 md:ml-12">
+                <h3 className="text-xl font-bold">Take Action</h3>
+                <p className="mt-2 text-gray-200">
+                  Download detailed reports and implement targeted retention strategies for at-risk customers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gradient-to-br from-red-900 via-black to-black py-20">
+        <div className="container px-4 md:px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Ready to <span className="text-yellow-500">Reduce</span> Customer Churn?
+            </h2>
+            <p className="mt-4 text-gray-200">
+              Start predicting customer behavior today and take proactive steps to improve retention.
+            </p>
+            <div className="mt-8">
+              <Link href="/predict">
+                <Button size="lg" className="bg-red-600 hover:bg-red-700">
+                  Start Your First Prediction
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
